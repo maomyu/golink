@@ -100,3 +100,30 @@ func (l *arrayList)Get(index int)interface{}{
 	}
 	return pre.item
 }
+
+// 删除某个元素
+func (l *arrayList)Remove(index int){
+	if index < 0 {
+		index = index%(l.lengh)
+		index = index+l.lengh
+	}
+
+	pre :=l.head.pre
+	current :=l.head
+	for i:=0;i<index;i++{
+		pre = pre.next
+		current = current.next
+	}
+	pre.next = current.next
+	current.next.pre = pre
+	if index == 0{
+		l.head = current.next
+	}
+	l.lengh--
+}
+
+// 删除所有的元素
+func (l *arrayList)RemoveAll(){
+	l.head = nil
+	l.lengh = 0
+}

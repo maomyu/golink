@@ -36,4 +36,10 @@ func TestArrayList(t *testing.T) {
 	fmt.Println(l.Get(-1))
 	fmt.Println(l.Get(-2))
 	fmt.Println(l.Get(-8))
+
+	// 删除元素
+	l.Remove(-1)
+	fmt.Println("******************")
+	fmt.Println(l.OrderRead())
+	fmt.Println(l.PostRead())
 }
