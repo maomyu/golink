@@ -87,3 +87,16 @@ func (l *arrayList) PostRead() (result []interface{} ){
 	result = append(result,p.item)
 	return
 }
+
+// 获得某个元素
+func (l *arrayList)Get(index int)interface{}{
+	if index < 0 {
+		index = index%(l.lengh)
+		index = index+l.lengh
+	}
+	pre :=l.head
+	for  i:=0;i<index;i++{
+		pre = pre.next
+	}
+	return pre.item
+}

@@ -30,4 +30,10 @@ func TestArrayList(t *testing.T) {
 	fmt.Println("******************")
 	fmt.Println(l.OrderRead())
 	fmt.Println(l.PostRead())
+
+	// 获得元素
+	fmt.Println(l.Get(0))
+	fmt.Println(l.Get(-1))
+	fmt.Println(l.Get(-2))
+	fmt.Println(l.Get(-8))
 }
